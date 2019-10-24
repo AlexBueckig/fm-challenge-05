@@ -1,0 +1,46 @@
+.hero {
+  margin: 0 1.25em;
+  padding: 4em 0;
+  max-width: 550px;
+
+  &__title {
+    margin-bottom: 1em;
+  }
+
+  &__subtitle {
+    margin-bottom: 3em;
+  }
+}
+
+// 600px
+@include for-tablet-portrait-up {
+  .hero {
+    margin: 0 auto;
+  }
+}
+
+// 900px
+@include for-tablet-landscape-up {
+}
+
+// 1200px
+@include for-desktop-up {
+  .hero {
+    max-width: 1100px;
+    display: grid;
+    gap: 1em 4em;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto 1fr 1fr;
+    grid-template-areas: '. cta' 'title form' 'subtitle form';
+  }
+
+  .hero__title {
+    grid-area: title;
+    margin: auto 0 0;
+  }
+
+  .hero__subtitle {
+    grid-area: subtitle;
+    margin: 0 0 auto;
+  }
+}

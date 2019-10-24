@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:400,500,600,700&display=swap');
+
+body {
+  font-family: 'Poppins', sans-serif;
+}
+
+.hero__title,
+.hero__subtitle,
+.button {
+  color: white;
+  text-align: center;
+}
+
+.hero__title {
+  font-size: 1.75rem;
+}
+
+.button {
+  text-decoration: none;
+}
+
+.button--submit {
+  text-transform: uppercase;
+  font-weight: 600;
+  font-size: 0.9rem;
+  letter-spacing: 1px;
+}
+
+.form__input,
+.form__input::placeholder {
+  font-size: 0.875rem;
+  font-weight: 700;
+}
+
+.form__input {
+  color: map-get($map: $colors-neutral, $key: dark-blue);
+}
+
+.form__legal {
+  font-size: 0.7rem;
+  text-align: center;
+  color: map-get($map: $colors-neutral, $key: grayish-blue);
+  line-height: 1.7;
+}
+
+.form__error-text,
+.form__legal--highlight {
+  color: map-get($map: $colors-primary, $key: red);
+}
+
+.form__legal--highlight {
+  font-weight: 700;
+}
+
+.form__error-text {
+  font-style: italic;
+  font-size: 0.7rem;
+  text-align: right;
+}
+
+@include for-desktop-up {
+  .hero__title,
+  .hero__subtitle {
+    text-align: left;
+  }
+
+  .hero__title {
+    font-size: 3.25rem;
+  }
+}

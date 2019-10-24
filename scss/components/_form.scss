@@ -1,0 +1,68 @@
+.form {
+  background: white;
+  border-radius: 10px;
+  padding: 1.25em;
+  box-shadow: 0px 0.5em 0px rgba(black, 0.15);
+
+  &__input-container {
+    position: relative;
+    width: 100%;
+    border-radius: 10px;
+    border: 1px solid rgba(map-get($map: $colors-neutral, $key: grayish-blue), 0.5);
+    margin-bottom: 1.25em;
+    display: flex;
+    padding: 1em 1.25em;
+  }
+
+  &__input {
+    border: 0;
+    outline: 0;
+    flex-grow: 1;
+    padding: 0.25em 0;
+  }
+
+  &__input-container:focus-within {
+    border: 1px solid map-get($map: $colors-neutral, $key: dark-blue);
+  }
+
+  &__legal {
+    margin: 0 2em;
+  }
+
+  &__error {
+    &.form__input-container {
+      border: 2px solid map-get($map: $colors-primary, $key: red);
+    }
+
+    .form__error-icon {
+      display: inline;
+    }
+
+    .form__error-text {
+      display: block;
+    }
+  }
+
+  &__error-icon {
+    display: none;
+    object-fit: contain;
+  }
+
+  &__error-text {
+    position: absolute;
+    bottom: -2em;
+    right: 0;
+    display: none;
+  }
+}
+
+@include for-desktop-up {
+  .form {
+    grid-area: form;
+    padding: 2em;
+
+    &__input-container {
+      margin-bottom: 2em;
+    }
+  }
+}
